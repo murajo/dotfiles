@@ -15,14 +15,20 @@ set autoindent " 改行時に前の行のインデントを継続する
 set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
 set shiftwidth=4 " smartindentで増減する幅
 
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 " ファイルをtreeで表示
 NeoBundle 'scrooloose/nerdtree'
-" カラースキーマでコードを見やすく
+" カラースキーマmolokai
 NeoBundle 'tomasr/molokai'
+" カラースキーマatom dark
+NeoBundle 'gosukiwi/vim-atom-dark.git'
 " python用コード補完
 NeoBundle 'davidhalter/jedi-vim'
 " ステータスラインの表示内容強化
@@ -30,7 +36,11 @@ NeoBundle 'itchyny/lightline.vim'
 " 末尾の全角と半角の空白文字を赤くハイライト
 NeoBundle 'bronson/vim-trailing-whitespace'
 " インデントの可視化
-NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" vim上でgitコマンド
+NeoBundle 'tpope/vim-fugitive'
+" 複数行コメントアウトを手軽に
+NeoBundle 'tomtom/tcomment_vim'
 
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
@@ -71,8 +81,6 @@ call neobundle#end()
 filetype 	plugin indent on
 
 " カラースキーマの設定
-if neobundle#is_installed('molokai') " molokaiがインストールされていれば
-    colorscheme molokai " カラースキームにmolokaiを設定する
-endif
-set t_Co=256 " iTerm2など既に256色環境なら無くても良い
+colorscheme atom-dark-256
+set t_Co=256
 syntax enable
