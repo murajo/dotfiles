@@ -7,7 +7,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-set number
+set number " 行番号を表示
 set expandtab " タブ入力を複数の空白入力に置き換える
 set tabstop=4 " 画面上でタブ文字が占める幅
 set softtabstop=4 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
@@ -41,6 +41,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-fugitive'
 " 複数行コメントアウトを手軽に
 NeoBundle 'tomtom/tcomment_vim'
+" 入力補完機能
+NeoBundle 'Shougo/neocomplete.vim'
 
 " Unit.vimの設定
 """"""""""""""""""""""""""""""
