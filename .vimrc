@@ -19,6 +19,9 @@ set shiftwidth=4 " smartindentで増減する幅
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 
+" 起動時にneocompleteを有効化
+let g:neocomplete#enable_at_startup = 1
+
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
